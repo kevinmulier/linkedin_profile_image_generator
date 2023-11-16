@@ -73,7 +73,7 @@ function drawBanner(ctx, canvas, color) {
 function drawCurvedText(ctx, canvas, text, textColor) {
   const canvasSize = canvas.width;
   const bannerWidth = canvasSize * 0.16;
-  const textRadius = canvasSize / 1.725 - bannerWidth;
+  const textRadius = canvasSize / 1.7 - bannerWidth;
   const startAngle = -0.8 * Math.PI;
   const endAngle = 0.8 * Math.PI;
   const reversedText = text.split("").reverse().join("");
@@ -89,7 +89,7 @@ function drawCurvedText(ctx, canvas, text, textColor) {
 function drawTextOnPath(ctx, text, centerX, centerY, radius, startAngle, endAngle) {
   const arcLength = endAngle - startAngle;
   const angleIncrement = arcLength / (text.length + 20);
-  const addToRotate = 0.8 + text.length * 0.0214;
+  const addToRotate = 0.8 + text.length * 0.02;
 
   ctx.save();
   ctx.translate(centerX, centerY);
