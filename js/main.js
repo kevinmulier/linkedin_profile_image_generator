@@ -43,9 +43,22 @@ function processImage(imageSrc, canvas, text, color, textColor) {
 
 function drawImageOnCanvas(img, canvas, ctx) {
   const canvasSize = 280;
+  let imgWidth, imgHeight;
+
+  if (img.width > img.height) {
+    imgHeight = canvasSize;
+    imgWidth = (img.width / img.height) * canvasSize;
+  } else {
+    imgWidth = canvasSize;
+    imgHeight = (img.height / img.width) * canvasSize;
+  }
+
+  const dx = (canvasSize - imgWidth) / 2;
+  const dy = (canvasSize - imgHeight) / 2;
+
   canvas.width = canvasSize;
   canvas.height = canvasSize;
-  ctx.drawImage(img, 0, 0, canvasSize, canvasSize);
+  ctx.drawImage(img, dx, dy, imgWidth, imgHeight);
 }
 
 function drawCircularClip(ctx, canvas) {
