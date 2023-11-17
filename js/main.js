@@ -42,7 +42,7 @@ function processImage(imageSrc, canvas, text, color, textColor) {
 }
 
 function drawImageOnCanvas(img, canvas, ctx) {
-  const canvasSize = 280;
+  const canvasSize = 448;
   let imgWidth, imgHeight;
 
   if (img.width > img.height) {
