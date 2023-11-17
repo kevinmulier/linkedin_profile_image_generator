@@ -31,7 +31,7 @@ function processImage(imageSrc, canvas, text, color, textColor) {
   const img = new Image();
 
   img.onload = function () {
-    drawImageOnCanvas(img, canvas, ctx);
+    drawImageOnCanvas(img, ctx, canvas);
     drawCircularClip(ctx, canvas);
     drawBanner(ctx, canvas, color);
     drawCurvedText(ctx, canvas, text, textColor);
@@ -41,7 +41,7 @@ function processImage(imageSrc, canvas, text, color, textColor) {
   img.src = imageSrc;
 }
 
-function drawImageOnCanvas(img, canvas, ctx) {
+function drawImageOnCanvas(img, ctx, canvas) {
   const canvasSize = 448;
   let imgWidth, imgHeight;
 
