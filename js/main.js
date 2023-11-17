@@ -51,7 +51,7 @@ function drawImageOnCanvas(img, canvas, ctx) {
 function drawCircularClip(ctx, canvas) {
   const canvasSize = canvas.width;
   ctx.beginPath();
-  ctx.arc(canvasSize / 2, canvasSize / 2, canvasSize / 2, 0, Math.PI * 2, true);
+  ctx.arc(canvasSize / 2, canvasSize / 2, canvasSize / 2 + 1, 0, Math.PI * 2, true);
   ctx.closePath();
   ctx.clip();
 }
@@ -59,12 +59,12 @@ function drawCircularClip(ctx, canvas) {
 function drawBanner(ctx, canvas, color) {
   const canvasSize = canvas.width;
   const bannerWidth = canvasSize * 0.16;
-  const gradient = ctx.createLinearGradient(-5, canvasSize + 5, canvasSize * 0.97, -0.4 * canvasSize);
+  const gradient = ctx.createLinearGradient(0, canvasSize, canvasSize * 0.97, -0.4 * canvasSize);
   gradient.addColorStop(0.28, color);
   gradient.addColorStop(0.4, "transparent");
 
   ctx.beginPath();
-  ctx.arc(canvasSize / 2, canvasSize / 2, canvasSize / 2 - bannerWidth / 2, 0, 1.2 * Math.PI, false);
+  ctx.arc(canvasSize / 2, canvasSize / 2, canvasSize / 2 - bannerWidth / 2 + 1, 0, 1.2 * Math.PI, false);
   ctx.strokeStyle = gradient;
   ctx.lineWidth = bannerWidth;
   ctx.stroke();
