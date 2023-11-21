@@ -72,9 +72,9 @@ function drawCircularClip(ctx, canvas) {
 function drawBanner(ctx, canvas, color) {
   const canvasSize = canvas.width;
   const bannerWidth = canvasSize * 0.16;
-  const gradient = ctx.createLinearGradient(0, canvasSize, canvasSize * 0.97, -0.4 * canvasSize);
-  gradient.addColorStop(0.28, color);
-  gradient.addColorStop(0.4, "transparent");
+  const gradient = ctx.createLinearGradient(0, canvasSize, canvasSize * 0.97, -0.5 * canvasSize);
+  gradient.addColorStop(0.26, color);
+  gradient.addColorStop(0.38, "rgba(255, 255, 255, 0)");
 
   ctx.beginPath();
   ctx.arc(canvasSize / 2, canvasSize / 2, canvasSize / 2 - bannerWidth / 2 + 1, 0, 1.2 * Math.PI, false);
