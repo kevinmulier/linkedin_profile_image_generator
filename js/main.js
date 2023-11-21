@@ -23,7 +23,7 @@ document.getElementById("randomColorButton").addEventListener("click", function 
   document.getElementById("colorInput").value = randomColor;
   document.getElementById("textColorInput").value = randomTextColor;
 
-  document.getElementById("imageForm").dispatchEvent(new Event("submit"));
+  document.getElementById("generateButton").click();
 });
 
 function processImage(imageSrc, canvas, text, color, textColor) {
