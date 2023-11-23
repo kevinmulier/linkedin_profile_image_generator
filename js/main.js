@@ -128,12 +128,12 @@ function drawTextOnPath(ctx, text, centerX, centerY, radius, startAngle, endAngl
 }
 
 function updateImageSection(canvas) {
-  const dataURL = canvas.toDataURL("image/png");
+  const dataURL = canvas.toDataURL("image/jpeg");
   document.getElementById("generatedImage").src = dataURL;
   document.getElementById("generatedImage").classList.remove("hidden");
   document.getElementById("downloadLink").href = dataURL;
   document.getElementById("downloadLink").classList.remove("hidden");
-  document.getElementById("downloadLink").download = "image_profil_personnalisee.png";
+  document.getElementById("downloadLink").download = "image_profil_personnalisee.jpeg";
 }
 
 function generateRandomColor() {
