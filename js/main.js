@@ -42,7 +42,8 @@ function processImage(imageSrc, canvas, text, color, textColor) {
 }
 
 function drawImageOnCanvas(img, ctx, canvas) {
-  const canvasSize = 448;
+  const selectedSize = document.querySelector("#sizeSelect").value;
+  const canvasSize = parseInt(selectedSize);
   let imgWidth, imgHeight;
 
   if (img.width > img.height) {
@@ -139,3 +140,15 @@ function generateRandomColor() {
   const randomColor = Math.floor(Math.random() * 16777215).toString(16);
   return "#" + randomColor.padStart(6, "0");
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+  const sizeInput = document.getElementById("sizeSelect");
+
+  sizeInput.addEventListener("input", function () {
+    let value = parseInt(this.value, 10);
+
+    if (value > 4000) {
+      this.value = 4000;
+    }
+  });
+});
