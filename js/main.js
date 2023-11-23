@@ -106,7 +106,7 @@ function drawCurvedText(ctx, canvas, text, textColor) {
 function drawTextOnPath(ctx, text, centerX, centerY, radius, startAngle, endAngle) {
   const arcLength = endAngle - startAngle;
   const angleIncrement = arcLength / (text.length + 20);
-  const addToRotate = 0.88 + text.length * 0.016;
+  const addToRotate = 0.88 + text.length * 0.0158;
 
   ctx.save();
   ctx.translate(centerX, centerY);
